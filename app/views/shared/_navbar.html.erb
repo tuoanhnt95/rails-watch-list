@@ -1,5 +1,11 @@
-<div class="container p-3">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @url %>);">
   <h1>
-    <%= link_to "Lists", lists_path, class: 'text-decoration-none'  %>
+    <%= link_to lists_path, class: 'text-decoration-none' do %>
+      <i class="fas fa-film"></i>
+    <% end %>
   </h1>
+  <div class="container">
+    <h1> <%= @main_text %></h1>
+    <a class="btn btn-flat" href="#"> <%= @action %></a>
+  </div>
 </div>

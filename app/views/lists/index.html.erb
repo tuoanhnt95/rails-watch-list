@@ -1,13 +1,61 @@
-<%= render 'shared/navbar' %>
+<% @url = 'https://www.intofilm.org/intofilm-production/9628/scaledcropped/630x355/resources/9628/into-film-plus-catalogue-image-07-22.jpg' %>
+<% @main_text = 'Genres' %>
+<% @action = '' %>
+
+<div class="rxWorld">
+  <section class="rnOuter ">
+    <section class="aoTable">
+      <div class="aoTableCell">
+        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @url %>);">
+          <h1>
+            <%= link_to lists_path, class: 'text-decoration-none' do %>
+              <i class="fas fa-film"></i>
+            <% end %>
+          </h1>
+          <div class="container">
+            <h1> <%= @main_text %></h1>
+            <a class="btn btn-flat" href="#"> <%= @action %></a>
+          </div>
+        </div>
+      </div>
 <div class="container">
-  <p>
-    <%= link_to 'Add list', new_list_path %>
-  </p>
-  <ul>
-    <% @lists.each do |list| %>
-    <li>
-      <%= link_to list.name.capitalize, list_path(list)  %>
-    </li>
+  <h3>
+    <%= link_to new_list_path do %>
+      <i class="far fa-plus-square"></i>
     <% end %>
-  </ul>
+  </h3>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category text-decoration-none"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/featured/?<%= list.name %>)"
+      >
+        <%= link_to list.name.capitalize, list_path(list) %>
+        <%= link_to list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'card-remove-link' do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+        <%= link_to new_list_bookmark_path(list), class: 'card-bookmark-link' do %>
+          <i class="far fa-plus-square"></i>
+        <% end %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+    </section>
+    <div class='rnInner'>
+        <div class='rnUnit'></div><!--
+        --><div class='rnUnit'></div><!--
+        --><div class='rnUnit'></div><!--
+        --><div class='rnUnit'></div><!--
+        --><div class='rnUnit'></div><!--
+        --><div class='rnUnit'></div><!--
+        --><div class='rnUnit'></div><!--
+        --><div class='rnUnit'></div><!--
+        --><div class='rnUnit'></div><!--
+        --><div class='rnUnit'></div><!--
+        -->
+    </div>
+
+  </section>
 </div>

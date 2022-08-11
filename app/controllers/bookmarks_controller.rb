@@ -4,6 +4,7 @@ class BookmarksController < ApplicationController
 
   def new
     @bookmark = Bookmark.new
+    @movies = Movie.where.not(id: @list.movies).order(title: :asc)
   end
 
   def create
