@@ -1,0 +1,15 @@
+<%= render 'shared/navbar' %>
+
+<div class="container">
+  <h3> <%= @list.name.capitalize %></h3>
+  <ul>
+      <% Bookmark.where(list_id: @list).each do |bookmark| %>
+    <li>
+      <%= bookmark.movie.title %>
+      <%= link_to 'X', bookmark_path(bookmark), data: { turbo_method: 'delete', turbo_confirm: "Delete this bookmark?"}  %>
+    </li>
+      <% end %>
+  </ul>
+  <br>
+  <%= link_to 'Add bookmark', new_list_bookmark_path(@list) %>
+</div>

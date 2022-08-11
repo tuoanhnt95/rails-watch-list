@@ -1,0 +1,10 @@
+<%= render 'shared/navbar' %>
+
+<div class="container">
+  <h3>Add list</h3>
+
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.submit %>
+  <% end %>
+</div>
