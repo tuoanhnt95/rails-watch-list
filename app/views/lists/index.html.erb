@@ -27,8 +27,7 @@
   <div class="cards">
     <% @lists.each do |list| %>
       <div class="card-category text-decoration-none"
-        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(
-      <%= list.photo.attached? ?  cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %> )"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ?  cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %> )"
       >
         <%= link_to list.name.capitalize, list_path(list) %>
         <%= link_to list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'card-remove-link' do %>
@@ -37,8 +36,8 @@
         <%= link_to new_list_bookmark_path(list), class: 'card-bookmark-link' do %>
           <i class="far fa-plus-square"></i>
         <% end %>
+        <%= link_to '', list_path(list), class: 'link-card' %>
       </div>
-
     <% end %>
   </div>
 </div>

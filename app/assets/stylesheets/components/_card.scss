@@ -19,6 +19,14 @@
   }
 }
 
+.link-card {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  bottom: 0px;
+  left: 0px;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
