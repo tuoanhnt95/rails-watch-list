@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 
 # Custom install
 gem "autoprefixer-rails"
+gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test] # security to hide secret keys
 gem "font-awesome-sass", "~> 6.1"
 # Use Sass to process CSS
